@@ -223,5 +223,5 @@ section3c(instructor);
 // let t = document.createTextNode("This is a Div");
 // sec.appendChild(t);
 // document.body.appendChild(sec);
-
+console.log("Hey Meg");
 
