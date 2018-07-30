@@ -114,114 +114,30 @@ let section1Content = document.querySelector("#section1");
 let section2Content = document.querySelector("#section2");
 let section3Content = document.querySelector("#section3");
 
-function section1a(info){
-    section1Content.innerHTML +=
+let createSection = function (info,section,statement,list) {
+    section.innerHTML +=
         `<div>
-            <h3>What I agree with:</h3>
-            <ul class="agree-list"></ul>
+            <h3>${statement}:</h3>
+            <ul class=${list}></ul>
         </div>`;
-    let ul = document.querySelector(".agree-list");
-    for(let i = 0; i < info.length; i++){
+    let ul = document.getElementsByClassName(list)[0];
+    for (let i = 0; i < info.length; i++){
         ul.innerHTML +=
             `<li>${info[i].sentence}</li>`
     }
 }
 
-section1a(agree);
+createSection(agree, section1Content, "Things I agree with", "agree");
+createSection(disagree, section1Content, "Things I disagree with", "disagree");
+createSection(why, section1Content, "Why I disagree", "why");
+createSection(people, section2Content, "People that also have my personality", "people");
+createSection(little, section3Content, "Interact with Little Sibling", "little");
+createSection(teammate, section3Content, "Interact with Teammates", "teammate");
+createSection(instructor, section3Content, "Interact with Instructor", "instructor");
 
-function section1b(info){
-    section1Content.innerHTML +=
-        `<div>
-            <h3>What I disagree with:</h3>
-            <ul class="disagree-list"></ul>
-        </div>`;
-    let ul = document.querySelector(".disagree-list");
-    for(let i = 0; i < info.length; i++){
-        ul.innerHTML +=
-            `<li>${info[i].sentence}</li>`
-    }
-}
 
-section1b(disagree);
-
-function section1c(info){
-    section1Content.innerHTML +=
-        `<div>
-            <h3>Why I disagree:</h3>
-            <ul class="why-list"></ul>
-        </div>`;
-    let ul = document.querySelector(".why-list");
-    for(let i = 0; i < info.length; i++){
-        ul.innerHTML +=
-            `<li>${info[i].sentence}</li>`
-    }
-}
-
-section1c(why);
-
-function section2(info){
-    section2Content.innerHTML +=
-        `<div>
-            <h3>People with my Personality:</h3>
-            <ul class="people-list"></ul>
-        </div>`;
-    let ul = document.querySelector(".people-list");
-    for(let i = 0; i < info.length; i++){
-        ul.innerHTML +=
-            `<li>${info[i].sentence}</li>`
-    }
-}
-
-section2(people);
-
-function section3a(info){
-    section3Content.innerHTML +=
-        `<div>
-            <h3>Interact with Little Sibling:</h3>
-            <ul class="little-list"></ul>
-        </div>`;
-    let ul = document.querySelector(".little-list");
-    for(let i = 0; i < info.length; i++){
-        ul.innerHTML +=
-            `<li>${info[i].sentence}</li>`
-    }
-}
-
-section3a(little);
-
-function section3b(info){
-    section3Content.innerHTML +=
-        `<div>
-            <h3>Interact with Teammates:</h3>
-            <ul class="teammate-list"></ul>
-        </div>`;
-    let ul = document.querySelector(".teammate-list");
-    for(let i = 0; i < info.length; i++){
-        ul.innerHTML +=
-            `<li>${info[i].sentence}</li>`
-    }
-}
-
-section3b(teammate);
-
-function section3c(info){
-    section3Content.innerHTML +=
-        `<div>
-            <h3>Interact with Instructors:</h3>
-            <ul class="instructor-list"></ul>
-        </div>`;
-    let ul = document.querySelector(".instructor-list");
-    for(let i = 0; i < info.length; i++){
-        ul.innerHTML +=
-            `<li>${info[i].sentence}</li>`
-    }
-}
-
-section3c(instructor);
 
 // let sec = document.createElement("DIV");
 // let t = document.createTextNode("This is a Div");
 // sec.appendChild(t);
 // document.body.appendChild(sec);
-console.log("Hey Meg");
-
